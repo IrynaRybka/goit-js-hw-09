@@ -9,24 +9,33 @@ let timeoutId = null;
 startBtn.addEventListener('click', colorRandom);
 stopBtn.addEventListener('click', stopColorRandom);
 
-// function colorRandom() {   
-//         const changeColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-//         bodyRef.style.backgroundColor = changeColor;
-//         return changeColor;
-// }
-function colorRandom() {   
+
+function colorRandom() { 
+    noClickStartBtn();
+     // const isHidden = getComputedStyle(startBtn, ":disabled");
+    // console.log(isHidden.getPropertyValue("visibility"));
+    
     timeoutId = setInterval(()=> {
-        const changeColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-        bodyRef.style.backgroundColor = changeColor;
-        return changeColor;
+        bodyRef.style.backgroundColor = getRandomHexColor();
+        return ; 
     }, AMOUNT);
 }
+function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  }
 
 function stopColorRandom(){
-    console.log("Bye");
+    clickAgaineStartBtn();
     clearTimeout(timeoutId);
+    console.log("No more color");
 }
 
-// timeoutId = setInterval(()=> {
-// console.log('Show color '+ colorRandom())
-// }, AMOUNT);
+function noClickStartBtn() {
+    startBtn.classList.add("no-click");
+    stopBtn.classList.remove("no-click");
+}
+
+function clickAgaineStartBtn() {
+    startBtn.classList.remove("no-click");
+    stopBtn.classList.add("no-click");
+}

@@ -16,3 +16,18 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.no-click{
+  background-color:#dcdada;
+  pointer-events: none;
+  outline: none;
+  border: none;
+}
+
+button[data-start], 
+button[data-stop] {
+  padding: 6px 12px;
+  border-radius: 3px;
+  border-color: #dcdada;
+
+}
