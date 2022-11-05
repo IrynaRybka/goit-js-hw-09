@@ -17,6 +17,7 @@ img {
   max-width: 100%;
 }
 
+/* 01-color-switcher */
 .no-click{
   background-color:#dcdada;
   pointer-events: none;
@@ -29,5 +30,16 @@ button[data-stop] {
   padding: 6px 12px;
   border-radius: 3px;
   border-color: #dcdada;
+}
 
+/* 02-timer */
+input {
+  padding: 6px 12px;;
+}
+.timer {
+  display: flex;
+  gap: 15px;
+}
+.value {
+  font-size: 30px;
 }
