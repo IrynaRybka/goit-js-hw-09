@@ -24,7 +24,7 @@ function submitCreatePromises(ev) {
   const delayStepMsVal = delayStep.valueAsNumber;
   const amountVal = amount.valueAsNumber;
 
-  for (let i = 1; i <= amountVal; i++) {
+  for (let i = 1; i <= amountVal; i+=1) {
     createPromise(i, delay)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
